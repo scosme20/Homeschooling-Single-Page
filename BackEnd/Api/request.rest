@@ -1,0 +1,7 @@
+POST http://localhost:3500/api/classes
+Content-Type: application/json
+
+{
+    "theme": "capitalism",
+    "type": "Pratical"
+}
