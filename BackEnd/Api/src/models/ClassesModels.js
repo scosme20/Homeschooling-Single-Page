@@ -3,24 +3,24 @@ const { Schema } = mongoose
 
 const classesSchema = new Schema({
     theme: {
-        type: 'string',
+        type: String,
         required: true
     },
     type: {
-        type: 'string',
+        type: String,
         required: true
     },
     activities: {
-        type: 'string',
+        type: String,
         required: true
-    }
+    },
 }, {timestamps: true})
 
 const Classes = mongoose.model("Classes", classesSchema)
 
-module.export = {
+module.exports = {
     Classes,
-    classesSchema,
+    classesSchema
 }
 
 

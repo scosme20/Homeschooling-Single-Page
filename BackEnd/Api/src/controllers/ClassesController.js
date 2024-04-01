@@ -1,10 +1,21 @@
-const { classes: ClassesModels } = require('../models/ClassesModels')
-const mongoose = require('mongoose')
+const { Classes: ClassesModels } = require('../models/ClassesModels.js');
 
-            const classesController = mongoose.model('classes', {
-                theme: String,
-                type: String,
-                activities: String
-            });
+const classesController = {
+    create: async (req, res) => {
+        try {
+            const classes = {
+                theme: req.body.theme,
+                type: req.body.type,
+                activities: req.body.activities,
+            };
 
-module.exports =    classesController;
+        const response = await ClassesModels.create(classes);
+
+        res.status(201).json({response, msg: "Aula criada com sucesso"});
+        } catch (error) {
+            console.log('error creating!')
+        }
+    }
+};
+
+module.exports = classesController;

@@ -31,6 +31,7 @@ const studentsSchema = new Schema({
     teachers : {
         type: [teachersSchema]
     },
+
 }, {timestamps: true})
 
 const Students = mongoose.model("Students", studentsSchema)
