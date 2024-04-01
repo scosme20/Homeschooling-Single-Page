@@ -2,7 +2,23 @@ POST http://localhost:3500/api/classes
 Content-Type: application/json
 
 {
-    "theme": "Produção Musical",
-    "type": "Pratico",
-    "activities": "Edm"
+    "theme": "Empreendedorismo",
+    "type": "teorico",
+    "activities": "negocios"
 }
+
+###
+
+POST http://localhost:3500/api/teachers
+Content-Type: application/json
+
+{
+    "name": "Sebastiao",
+    "email": "scosmeagostinho",
+    "type": "pratical",
+    "discipline": "portuguese"
+}
+
+
+
+

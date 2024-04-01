@@ -1,20 +1,24 @@
-const mongoose = require('mongoose');
-const { Schema } = mongoose
+const mongoose = require('mongoose')
+const { Schema} = require('mongoose')
 
-const disciplineSchema = new Schema({
+const disciplineSchemas = new Schema ({
+    name: {
+        type: String,
+        required: true,
+    },
     content: {
-        type: 'string',
-        required: true
+        type: String,
+        required: true,
     },
     description: {
-        type: 'string',
-        required: true
-    },
+        type: String,
+        required: true,
+    }
 }, {timestamps: true})
 
-const Discipline = mongoose.model("Discipline", disciplineSchema)
+const Disciplines = mongoose.model('Disciplines', disciplineSchemas)
 
-module.export = {
-    Discipline,
-    disciplineSchema,
+module.exports = {
+    Disciplines,
+    disciplineSchemas
 }

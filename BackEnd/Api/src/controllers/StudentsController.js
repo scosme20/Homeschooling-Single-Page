@@ -1,10 +1,21 @@
-const { student: StudentModels } = require('../models/studentsModels')
-const mongoose = require('mongoose')
+const { Students: StudentsModels } = require('../models/studentsModels')
 
-            const studentsController = mongoose.model('students', {
-                name: String,
-                note: Number,
-                presence: Number
-            });
+const studentsController = {
+    create: async (req, res) => {
+        try {
+            
+            const students = {
+                name: req.body.name, 
+                email: req.body.email,
+            }
 
-module.exports =    studentsController;
+            const response = await StudentsModels.create(students)
+
+            res.status(201).json({response, msg: "estudante criado com sucesso"});
+        } catch (error) {
+            console.log('Failed to create student')
+        }
+    }
+}
+
+module.exports = studentsController
