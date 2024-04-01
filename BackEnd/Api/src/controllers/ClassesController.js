@@ -29,6 +29,7 @@ const classesController = {
     get: async (req, res) => {
         try {
             
+
             const id = req.params.id;
             const classes = await ClassesModels.findById(id);
 

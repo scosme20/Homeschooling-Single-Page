@@ -1,24 +1,177 @@
+################CLASSES
+
+###POST
 POST http://localhost:3500/api/classes
 Content-Type: application/json
-
 {
     "theme": "Empreendedorismo",
     "type": "teorico",
     "activities": "negocios"
 }
+#########################################
 
-###
+######GETALL
+Get http://localhost:3500/api/classes
 
-POST http://localhost:3500/api/teachers
+##########################################
+
+
+#########GETBYID
+Get http://localhost:3500/api/classes/660a2b128d27415539a6dbbd
+
+#######################################
+
+
+######DELETE
+Delete http://localhost:3500/api/classes/
+
+
+##########################################
+
+
+#####UPDATE
+
+PUT  http://localhost:3500/api/classes/660a7dc37d20f72d809436e0
 Content-Type: application/json
 
 {
-    "name": "Sebastiao",
-    "email": "scosmeagostinho",
-    "type": "pratical",
-    "discipline": "portuguese"
+    "theme": "Empreendedorismo",
+    "type": "vendas",
+    "activities": "vendas"
+}
+###############################################################################
+
+#####disciplines
+
+#####POST
+
+POST http://localhost:3500/api/disciplines
+Content-Type: application/json
+
+{
+    "name": "matematica",
+    "content": "calculo",
+    "description": "derivada"
 }
 
+###############################################
 
 
+####GETALL
 
+GET  http://localhost:3500/api/disciplines/
+
+#############################################
+
+
+#####GETBYID
+
+GET http://localhost:3500/api/disciplines/
+
+######################################
+
+#######DELETE
+
+Delete http://localhost:3500/api/disciplines/
+
+################################################
+
+##########UPDATE
+
+PUT  http://localhost:3500/api/disciplines/660ac60c9ff7583d2c58e3c3
+Content-Type: application/json
+
+{
+    "name": "geografia",
+    "content": "mundo",
+    "description": "brasil"
+}
+
+########################################################################
+
+########STUDENTS
+
+
+#########POST
+POST http://localhost:3500/api/students
+Content-Type: application/json
+
+{
+    "name": "sebastiao",
+    "email": "scosmeagostinho"
+}
+
+########################################
+
+#######GETALL
+
+GET  http://localhost:3500/api/students/
+
+
+##########################################
+
+
+########GETBYID
+GET http://localhost:3500/api/disciplines/660a8b727153a2e9e76b0088
+
+#########################################################################
+
+#######DELETE
+
+Delete http://localhost:3500/api/disciplines/
+
+
+#####PUT
+
+PUT http://localhost:3500/api/students/
+Content-Type: application/json
+
+{
+    "name": "Fabio",
+    "email": "fabiooliveira"
+}
+
+################Teachers
+
+
+#########POST
+POST http://localhost:3500/api/teachers
+Content-Type: application/json
+
+            {
+                "name" : "Joao da Silva",
+                "email": "joaodasilva",
+                "type": "pratical",
+                "discipline": "portuguese" 
+            }
+
+##########################################
+
+##########GETALL
+
+GET  http://localhost:3500/api/teachers
+
+############################################
+
+
+########GETBYID
+GET http://localhost:3500/api/teachers/660a9af6da47d6869ebbd76a
+
+#########################################################################
+
+#######DELETE
+
+Delete http://localhost:3500/api/teachers/
+
+
+#####PUT
+
+PUT http://localhost:3500/api/teachers/660ac86e9ff7583d2c58e3c9
+Content-Type: application/json
+
+            {
+                "name" : "Joao Oliveira",
+                "email": "joaodasilva",
+                "type": "pratical",
+                "discipline": "portuguese" 
+            }
