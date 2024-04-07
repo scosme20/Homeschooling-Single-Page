@@ -44,24 +44,22 @@ const disciplineController = {
         } catch (error) {
             console.log('error getting ID!', error);
         }
-},    delete: async (req, res) => {
+},  delete: async (req, res) => {
     try {
-        
         const id = req.params.id;
-        const disciplines = await DisciplinesModels.findById(id)
+        console.log('ID recebido para exclusão:', id); // Verifique se o ID está sendo recebido corretamente
 
-        if(!disciplines) {
-            res.status(404).json({msg: "Not Found!"})
+        const disciplines = await DisciplinesModels.findById(id);
+        if (!disciplines) {
+            res.status(404).json({ msg: "Disciplina não encontrada!" });
             return;
         }
-        const deleteDisciplines = await DisciplinesModels.findByIdAndDelete(id)
 
-        res
-        .status(200)
-        .json({ deleteDisciplines, msg: "Deleted Successfully" })
-
+        const deleteDisciplines = await DisciplinesModels.findByIdAndDelete(id);
+        res.status(200).json({ deleteDisciplines, msg: "Disciplina excluída com sucesso" });
     } catch (error) {
-        console.log("Erro no Delete", error)
+        console.log("Erro ao excluir disciplina:", error);
+        res.status(500).json({ message: 'Erro interno do servidor' });
     }
 },
 update: async (req, res) => {

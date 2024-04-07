@@ -1,37 +1,36 @@
 const router = require('express').Router();
 
-const disciplinesController = require('../controllers/DisciplineController')
+const disciplineController = require('../controllers/DisciplineController');
 
 //POST
 router
 .route('/disciplines')
-.post((req, res) => disciplinesController.create(req, res));
+.post((req, res) => disciplineController.create(req, res));
 
 
 //GETALL
 router
 .route('/disciplines')
-.get((req, res) => disciplinesController.getAll(req, res))
-
+.get((req, res) => disciplineController.getAll(req, res));
 
 
 //GETBYID
 router
 .route('/disciplines/:id')
-.get((req, res) => disciplinesController.get(req, res))
-
+.get((req, res) => disciplineController.get(req, res))
 
 
 //DELETE
 router
 .route('/disciplines/:id')
-.delete((req, res) => disciplinesController.delete(req, res))
+.delete((req, res) => disciplineController.delete(req, res))
 
 
 //UPDATE
-
 router
 .route('/disciplines/:id')
-.put((req, res) => disciplinesController.update(req, res))
+.put((req, res) => disciplineController.update(req, res))
 
 module.exports = router;
+
+

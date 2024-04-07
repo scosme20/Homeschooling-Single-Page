@@ -66,13 +66,13 @@ GET  http://localhost:3500/api/disciplines/
 
 #####GETBYID
 
-GET http://localhost:3500/api/disciplines/
+GET http://localhost:3500/api/disciplines/660ac60c9ff7583d2c58e3c3"
 
 ######################################
 
 #######DELETE
 
-Delete http://localhost:3500/api/disciplines/
+Delete http://localhost:3500/api/disciplines/660ac60c9ff7583d2c58e3c3"
 
 ################################################
 
@@ -93,7 +93,7 @@ Content-Type: application/json
 
 
 #########POST
-POST http://localhost:3500/api/students
+POST http://localhost:3500/api/student
 Content-Type: application/json
 
 {
@@ -105,25 +105,25 @@ Content-Type: application/json
 
 #######GETALL
 
-GET  http://localhost:3500/api/students/
+GET  http://localhost:3500/api/student/
 
 
 ##########################################
 
 
 ########GETBYID
-GET http://localhost:3500/api/disciplines/660a8b727153a2e9e76b0088
+GET http://localhost:3500/api/student/6611afba3d40ee1e39a27ec
 
 #########################################################################
 
 #######DELETE
 
-Delete http://localhost:3500/api/disciplines/
+Delete http://localhost:3500/api/student/6611afba3d40ee1e39a27ec3
 
 
 #####PUT
 
-PUT http://localhost:3500/api/students/
+PUT http://localhost:3500/api/student/
 Content-Type: application/json
 
 {

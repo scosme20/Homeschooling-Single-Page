@@ -1,48 +1,51 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import './app.sass'; 
 
-import Home from './pages/home/home'
-import Student from './pages/student/student'
-import Classes from  './pages/classes/classes'
-import Disciplines from './pages/disciplines/disciplines'
-import Teachers  from './pages/teachers/teachers'
-import Root from './root'
+
+import Home from './pages/home/home';
+import Student from './pages/student/student';
+import Classes from './pages/classes/classes';
+import Disciplines from './pages/disciplines/disciplines';
+import Teachers from './pages/teachers/teachers';
+import Root from './root';
+
+// Não é mais necessário criar o contexto do tema ou usar useState
 
 const router = createBrowserRouter([
   {
-    path: "",
+    path: '',
     element: <Root />,
     children: [
       {
-        path: "student",
+        path: 'student',
         element: <Student />,
-
       },
       {
-        path: "disciplines",
+        path: 'disciplines',
         element: <Disciplines />,
-
       },
       {
-        path: "classes",
+        path: 'classes',
         element: <Classes />,
-
       },
       {
-        path: "teachers",
-        element: <Teachers/>,
+        path: 'teachers',
+        element: <Teachers />,
       },
       {
-        path: "home",
+        path: 'home',
         element: <Home />,
-
       },
     ],
   },
 ]);
 
-
 function App() {
-  return <RouterProvider router={router} />
+  return (
+    <RouterProvider router={router} />
+  );
 }
 
-export default App
+export default App;
+
+

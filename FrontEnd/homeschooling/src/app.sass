@@ -1,0 +1,16 @@
+// Defina as variáveis de cor para light mode e dark mode
+$light-background: #ffffff
+$light-text: #000000
+$dark-background: #000000
+$dark-text: #ffffff
+
+// Selecione o tema com base no contexto do tema
+body
+  background-color: $light-background // Use $light-background se o tema for light
+  color: $light-text // Use $light-text se o tema for light
+
+// Se o tema for dark, substitua as variáveis de cor
+[data-theme='dark']
+  body
+    background-color: $dark-background // Use $dark-background se o tema for dark
+    color: $dark-text // Use $dark-text se o tema for dark

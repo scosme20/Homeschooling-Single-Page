@@ -1,35 +1,34 @@
-const { Students: StudentsModels } = require('../models/studentsModels')
+const { Students: StudentsModels } = require('../models/studentsModels');
 
-const studentsController = {
+const StudentsController = {
     create: async (req, res) => {
         try {
-            
             const students = {
-                name: req.body.name, 
-                email: req.body.email,
-            }
+                name: req.body.name,
+                email: req.body.email
+            };
 
-            const response = await StudentsModels.create(students)
+        const response = await StudentsModels.create(students);
 
-            res.status(201).json({response, msg: "estudante criado com sucesso"});
+        res.status(201).json({response, msg: "Aula criada com sucesso"});
         } catch (error) {
-            console.log('Failed to create student')
+            console.log('error creating!')
         }
     },
     getAll: async (req, res) => {
         try {
             
-            const students = await StudentsModels.find()
+            const students = await  StudentsModels.find();
 
             res.json(students)
-
         } catch (error) {
-            console.log('Failed to get all students')
+            console.log('error getting all!', error);
         }
     },
     get: async (req, res) => {
         try {
             
+
             const id = req.params.id;
             const students = await StudentsModels.findById(id);
 
@@ -67,8 +66,8 @@ const studentsController = {
         const id = req.params.id
 
         const students = {
-            name: req.body.name, 
-            email: req.body.email,
+            name: req.body.name,
+            email: req.body.email
         };
 
         const updateStudents = await StudentsModels.findByIdAndUpdate(id, students)
@@ -79,6 +78,6 @@ const studentsController = {
         }
         res.status(200).json({students, msg: "Updated"})
     }
-}
+};
 
-module.exports = studentsController
+module.exports = StudentsController;
